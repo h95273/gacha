@@ -108,14 +108,18 @@ def reset():
     #買った枚数、使ったお金を扱う変数。グローバル変数。
     global number_of_cards
     global money
-
+    
     # 金額を記録しているファイルを消すことで金額をゼロにする。
     # （あるいは、money=0をファイルに上書きすることでもOK）
     money = 0
+    
+    # 要修正。金額と同じように、持っている枚数もゼロにしてね。
+    
+    # ファイルを削除する。
     os.remove(DATAFILE)
     # ルートにリダイレクト（アクセス）する。
     return redirect('/')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run()
